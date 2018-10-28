@@ -6,7 +6,7 @@ function make(value) {
             result = Array.from(arguments).reduce((accum, item) => accum + item, 0);
         }
         return make(result + value);
-    };
+    }
 
     closureFunc.valueOf = function () {
         return value;
