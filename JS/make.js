@@ -1,6 +1,11 @@
-function make() {
+function make(value) {
     function closureFunc(args) {
+        let result = 0;
 
+        if ('function' !== typeof args) {
+            result = Array.from(arguments).reduce((accum, item) => accum + item, 0);
+        }
+        return make(result + value);
     };
 
     closureFunc.valueOf = function () {
